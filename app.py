@@ -4,10 +4,10 @@ import requests
 app = Flask(__name__)
 
 # 🔑 API keys (for local/testing)
-ETHERSCAN_API_KEY = "NGGVCAH5UQZZ3AHC89DY27CATXHVJVYK54"
-FIREWORKS_API_KEY = "fw_3ZLLQxFyu6eZWtfKBEA6EcUQ"
+ETHERSCAN_API_KEY = ""
+FIREWORKS_API_KEY = ""
 
-# Default chain (Ethereum mainnet)
+
 CHAIN_ID = "1"
 
 
@@ -22,7 +22,7 @@ def get_transaction_v2(tx_hash):
         resp = requests.get(url, headers=headers, timeout=10)
         if resp.status_code == 200:
             return resp.json()
-        # If v2 not found, return None so fallback kicks in
+        
         return None
     except Exception:
         return None
@@ -57,9 +57,9 @@ def get_transaction(tx_hash):
     """
     v2 = get_transaction_v2(tx_hash)
     if v2:
-        # v2 worked
+    
         return v2
-    # fallback
+    
     return get_transaction_v1(tx_hash)
 
 
@@ -130,3 +130,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
