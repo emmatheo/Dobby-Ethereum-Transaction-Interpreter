@@ -109,5 +109,5 @@ To deploy without Flask (static frontend + backend API), separate your Python ba
 
 **timmyy**
 
-* 🔗 [Twitter/X](https://x.com/)
+* 🔗 [Twitter/X](https://x.com/Buzor002)
 * 💻 [GitHub](https://github.com/emmatheo)
